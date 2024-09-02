@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "private": true,
   "scripts": {
+    "app:dev": "nodemon app.ts",
     "dev": "keystone dev",
     "start": "keystone start",
     "build": "keystone build"
@@ -11,6 +12,12 @@
     "@keystone-6/auth": "^8.0.0",
     "@keystone-6/core": "^6.0.0",
     "@keystone-6/fields-document": "^9.0.0",
+    "express": "^4.19.2",
+    "handlebars": "^4.7.8",
     "typescript": "^5.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2"
   }
 }

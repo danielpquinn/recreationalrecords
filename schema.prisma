@@ -21,6 +21,7 @@ model User {
 
 model Artist {
   id                  String    @id @default(cuid())
+  legacyId            String    @default("")
   name                String    @default("")
   from_Release_artist Release[] @relation("Release_artist")
   from_Track_artist   Track[]   @relation("Track_artist")
@@ -28,12 +29,14 @@ model Artist {
 
 model Genre {
   id                  String    @id @default(cuid())
+  legacyId            String    @default("")
   name                String    @default("")
   from_Release_genres Release[] @relation("Release_genres")
 }
 
 model Release {
   id              String    @id @default(cuid())
+  legacyId        String    @default("")
   title           String    @default("")
   slug            String    @unique @default("")
   publishedDate   DateTime? @default(now())
@@ -42,7 +45,7 @@ model Release {
   image_width     Int?
   image_height    Int?
   image_extension String?
-  description     String    @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  description     String    @default("")
   artist          Artist?   @relation("Release_artist", fields: [artistId], references: [id])
   artistId        String?   @map("artist")
   tracks          Track[]   @relation("Release_tracks")
@@ -53,6 +56,7 @@ model Release {
 
 model Track {
   id                  String    @id @default(cuid())
+  legacyId            String    @default("")
   title               String    @default("")
   artist              Artist?   @relation("Track_artist", fields: [artistId], references: [id])
   artistId            String?   @map("artist")

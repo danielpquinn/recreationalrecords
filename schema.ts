@@ -61,6 +61,7 @@ export const lists = {
   Artist: list({
     access: allowAll,
     fields: {
+      legacyId: text(),
       name: text(),
     },
   }),
@@ -68,6 +69,7 @@ export const lists = {
   Genre: list({
     access: allowAll,
     fields: {
+      legacyId: text(),
       name: text(),
     },
   }),
@@ -75,6 +77,7 @@ export const lists = {
   Release: list({
     access: allowAll,
     fields: {
+      legacyId: text(),
       title: text(),
       slug: text({ isIndexed: "unique", isFilterable: true }),
       publishedDate: timestamp({
@@ -83,7 +86,7 @@ export const lists = {
       image: image({
         storage: "release_image",
       }),
-      description: document(),
+      description: text(),
       artist: relationship({ ref: "Artist" }),
       tracks: relationship({ ref: "Track", many: true }),
       genres: relationship({ ref: "Genre", many: true }),
@@ -93,6 +96,7 @@ export const lists = {
   Track: list({
     access: allowAll,
     fields: {
+      legacyId: text(),
       title: text(),
       artist: relationship({ ref: "Artist" }),
       mp3: file({ storage: "track_mp3" }),

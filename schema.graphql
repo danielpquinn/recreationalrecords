@@ -113,6 +113,7 @@ input UserCreateInput {
 
 type Artist {
   id: ID!
+  legacyId: String
   name: String
 }
 
@@ -125,15 +126,18 @@ input ArtistWhereInput {
   OR: [ArtistWhereInput!]
   NOT: [ArtistWhereInput!]
   id: IDFilter
+  legacyId: StringFilter
   name: StringFilter
 }
 
 input ArtistOrderByInput {
   id: OrderDirection
+  legacyId: OrderDirection
   name: OrderDirection
 }
 
 input ArtistUpdateInput {
+  legacyId: String
   name: String
 }
 
@@ -143,11 +147,13 @@ input ArtistUpdateArgs {
 }
 
 input ArtistCreateInput {
+  legacyId: String
   name: String
 }
 
 type Genre {
   id: ID!
+  legacyId: String
   name: String
 }
 
@@ -160,15 +166,18 @@ input GenreWhereInput {
   OR: [GenreWhereInput!]
   NOT: [GenreWhereInput!]
   id: IDFilter
+  legacyId: StringFilter
   name: StringFilter
 }
 
 input GenreOrderByInput {
   id: OrderDirection
+  legacyId: OrderDirection
   name: OrderDirection
 }
 
 input GenreUpdateInput {
+  legacyId: String
   name: String
 }
 
@@ -178,16 +187,18 @@ input GenreUpdateArgs {
 }
 
 input GenreCreateInput {
+  legacyId: String
   name: String
 }
 
 type Release {
   id: ID!
+  legacyId: String
   title: String
   slug: String
   publishedDate: DateTime
   image: ImageFieldOutput
-  description: Release_description_Document
+  description: String
   artist: Artist
   tracks(where: TrackWhereInput! = {}, orderBy: [TrackOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: TrackWhereUniqueInput): [Track!]
   tracksCount(where: TrackWhereInput! = {}): Int
@@ -211,10 +222,6 @@ enum ImageExtension {
   gif
 }
 
-type Release_description_Document {
-  document(hydrateRelationships: Boolean! = false): JSON!
-}
-
 input ReleaseWhereUniqueInput {
   id: ID
   slug: String
@@ -225,9 +232,11 @@ input ReleaseWhereInput {
   OR: [ReleaseWhereInput!]
   NOT: [ReleaseWhereInput!]
   id: IDFilter
+  legacyId: StringFilter
   title: StringFilter
   slug: StringFilter
   publishedDate: DateTimeNullableFilter
+  description: StringFilter
   artist: ArtistWhereInput
   tracks: TrackManyRelationFilter
   genres: GenreManyRelationFilter
@@ -247,17 +256,20 @@ input GenreManyRelationFilter {
 
 input ReleaseOrderByInput {
   id: OrderDirection
+  legacyId: OrderDirection
   title: OrderDirection
   slug: OrderDirection
   publishedDate: OrderDirection
+  description: OrderDirection
 }
 
 input ReleaseUpdateInput {
+  legacyId: String
   title: String
   slug: String
   publishedDate: DateTime
   image: ImageFieldInput
-  description: JSON
+  description: String
   artist: ArtistRelateToOneForUpdateInput
   tracks: TrackRelateToManyForUpdateInput
   genres: GenreRelateToManyForUpdateInput
@@ -296,11 +308,12 @@ input ReleaseUpdateArgs {
 }
 
 input ReleaseCreateInput {
+  legacyId: String
   title: String
   slug: String
   publishedDate: DateTime
   image: ImageFieldInput
-  description: JSON
+  description: String
   artist: ArtistRelateToOneForCreateInput
   tracks: TrackRelateToManyForCreateInput
   genres: GenreRelateToManyForCreateInput
@@ -323,6 +336,7 @@ input GenreRelateToManyForCreateInput {
 
 type Track {
   id: ID!
+  legacyId: String
   title: String
   artist: Artist
   mp3: FileFieldOutput
@@ -343,16 +357,19 @@ input TrackWhereInput {
   OR: [TrackWhereInput!]
   NOT: [TrackWhereInput!]
   id: IDFilter
+  legacyId: StringFilter
   title: StringFilter
   artist: ArtistWhereInput
 }
 
 input TrackOrderByInput {
   id: OrderDirection
+  legacyId: OrderDirection
   title: OrderDirection
 }
 
 input TrackUpdateInput {
+  legacyId: String
   title: String
   artist: ArtistRelateToOneForUpdateInput
   mp3: FileFieldInput
@@ -368,6 +385,7 @@ input TrackUpdateArgs {
 }
 
 input TrackCreateInput {
+  legacyId: String
   title: String
   artist: ArtistRelateToOneForCreateInput
   mp3: FileFieldInput
