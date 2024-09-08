@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  background-color: #D0E3D2;
+  font-family: "Kufam", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #3C6840;
+}
+
+a {
+  text-decoration: none;
+  color: #3C6840;
+}
+
+.release-items {
+  padding: 0 10px 100px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+body {
+  /* background-image: url('/Releases.png'); */
+  background-position: 0 0;
+  background-size: 430px;
+  background-repeat: no-repeat;
+}
+
+header {
+  margin: 10px 10px 20px 10px;
+  padding: 10px;
+  background-color: #ACCCAF;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.badge {
+  font-weight: 600;
+  background-color: white;
+  border-radius: 6px;
+  padding: 2px 4px 0 4px;
+  border: 1px solid #ACCCAF;
+  font-size: 14px;
+}
+
+.ball-and-plant {
+  width: 97px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+
+.release-count {
+  padding: 0 20px 20px 20px;
+}
+
+.release-item {
+  border-radius: 18px;
+  background-color: #F0F5FA;
+  color: #3F5D79;
+  display: flex;
+}
+
+.release-item a {
+  color: #3F5D79;
+}
+
+.release-item-image {
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+}
+
+.release-item-info {
+  padding: 10px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.release-item-info-top {
+  flex: 1;
+}
+
+.release-item-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.release-item-meta {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.release-breadcrumb {
+  font-weight: 600;
+  padding: 0 20px 20px 20px;
+}
+
+.release-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.release {
+  max-width: 600px;
+  border-radius: 18px;
+  background-color: #F0F5FA;
+  color: #3F5D79;
+}
+
+.release-image {
+  width: 100%;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.release-meta {
+  font-size: 14px;
+}
+
+.release-content {
+  padding: 20px;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #A6B8C9;
+}
+
+.track-info {
+  flex-grow: 1;
+}
+
+.track-title {
+  font-weight: 600;
+}
+
+.track-artist {
+  font-size: 14px;
+}

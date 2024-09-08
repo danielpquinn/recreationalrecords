@@ -1,8 +1,11 @@
 import express from "express";
 import { indexHandler } from "./routes";
 import { releaseHandler } from "./routes/release";
+
+import "./templates/layout";
+
 const app = express();
-const port = 3001;
+const port = 3008;
 
 app.use(express.static('public'))
 

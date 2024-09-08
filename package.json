@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "private": true,
   "scripts": {
+    "app:start": "ts-node app.ts",
     "app:dev": "nodemon app.ts",
     "dev": "keystone dev",
     "start": "keystone start",
