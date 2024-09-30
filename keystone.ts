@@ -29,7 +29,7 @@ export default withAuth(
       release_image: {
         kind: 'local',
         type: 'image',
-        generateUrl: path => `http://localhost:3000/release_images${path}`,
+        generateUrl: path => `/release_images${path}`,
         serverRoute: {
           path: '/release_images',
         },
@@ -38,7 +38,7 @@ export default withAuth(
       track_mp3: {
         kind: 'local',
         type: 'file',
-        generateUrl: path => `http://localhost:3000/track_mp3s${path}`,
+        generateUrl: path => `/track_mp3s${path}`,
         serverRoute: {
           path: '/track_mp3s',
         },

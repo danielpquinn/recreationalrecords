@@ -6,6 +6,15 @@ Handlebars.registerPartial(
 <html>
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WH7MJH25GG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WH7MJH25GG');
+  </script>
   <title>Recreational Records | {{title}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +22,7 @@ Handlebars.registerPartial(
     rel="stylesheet" />
   <meta name="description"
     content="Chronic Sinus Infection Land. A catalog of random low-fi musical meanderings created by artists from Montana and beyond. No track is too rough." />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link href="/css/style.css" rel="stylesheet" />
 </head>
 
